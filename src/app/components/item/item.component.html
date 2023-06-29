@@ -1,0 +1,14 @@
+<div class="m-3" [ngClass]="{'completed':item.completed}" >
+    <ul class="list-group list-group-flush">
+        <li  class="list-group-item">
+            <input type="checkbox" [checked]="item.completed" (change)="onToggle(item)">
+            {{item.title | uppercase }}</li>
+        <li class="list-group-item">{{item.price | currency }}</li>
+        <li class="list-group-item">{{item.quantity}}</li>
+        <li class="list-group-item">{{item.price * item.quantity | currency }}</li>
+        <li>
+            <button (click)="onDelete(item)" class="btn btn-primary">Eliminar</button>
+        </li>
+      </ul>
+        
+</div>
